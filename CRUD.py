@@ -5,9 +5,9 @@ class RedisDatabase:
         self.redis = redis.Redis(host='localhost', port=6379, db=0)
 
     # CRUD operations for Product table
-    def create_product(self, code, quantity, price):
+    def create_product(self, name, code, quantity, price):
         product_id = self.redis.incr('product_id')
-        self.redis.hmset(f'product:{product_id}', {'code': code, 'quantity': quantity, 'price': price})
+        self.redis.hmset(f'product:{product_id}', {'name': name, 'code': code, 'quantity': quantity, 'price': price})
         return product_id
 
     def read_product(self, product_id):

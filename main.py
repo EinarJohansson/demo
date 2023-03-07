@@ -7,11 +7,12 @@ if __name__ == '__main__':
   print("\nCreate a product!")
 
   product_name = input("Enter the productname: ")
+  product_code = input("Enter the product code: ")
   product_quantity = input("Enter the quantity of the product: ")
   product_price = input("Enter the price of the product (SEK): ")
 
   # Create a product
-  db.create_product(product_name, product_quantity, product_price)
+  db.create_product(product_name, product_code, product_quantity, product_price)
 
   print("\nCreate a supplier!")
   supplier_name = input("Enter the suppliername: ")
